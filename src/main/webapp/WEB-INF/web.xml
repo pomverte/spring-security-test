@@ -4,6 +4,8 @@
   xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd">
 
   <!-- http://localhost:8080/spring-security-test/ -->
+  <!-- http://www.mkyong.com/spring-security/spring-security-hello-world-example/ -->
+  <!-- http://java.dzone.com/articles/su-and-sudo-spring-security -->
   <display-name>Spring Security Test - ${project.version}</display-name>
 
   <!-- Spring MVC -->
