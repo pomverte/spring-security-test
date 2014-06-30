@@ -12,6 +12,7 @@ import org.springframework.stereotype.Service;
 @Service
 public class MultiUserDetailsService implements UserDetailsService {
 
+	// Resource = Qualifier + Autowired
 	@Resource(name = "userDetailsServiceList")
 	private List<UserDetailsService> userDetailsServiceList;
 
