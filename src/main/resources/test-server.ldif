@@ -1,0 +1,132 @@
+version: 1
+
+dn: dc=springframework,dc=org
+objectClass: extensibleObject
+objectClass: domain
+objectClass: top
+dc: springframework
+
+dn: ou=groups,dc=springframework,dc=org
+objectclass: organizationalUnit
+objectclass: top
+ou: groups
+
+dn: ou=subgroups,ou=groups,dc=springframework,dc=org
+objectclass: organizationalUnit
+objectclass: top
+ou: subgroups
+
+dn: ou=people,dc=springframework,dc=org
+objectclass: organizationalUnit
+objectclass: top
+ou: people
+
+dn: ou=space cadets,dc=springframework,dc=org
+objectclass: organizationalUnit
+objectclass: top
+ou: space cadets
+
+dn: ou=\"quoted people\",dc=springframework,dc=org
+objectclass: organizationalUnit
+objectclass: top
+ou: "quoted people"
+
+dn: ou=otherpeople,dc=springframework,dc=org
+objectclass: organizationalUnit
+objectclass: top
+ou: otherpeople
+
+dn: uid=ben,ou=people,dc=springframework,dc=org
+objectclass: inetOrgPerson
+objectclass: organizationalPerson
+objectclass: person
+objectclass: top
+cn: Ben Alex
+sn: Alex
+uid: ben
+userpassword: uncle
+
+dn: uid=bob,ou=people,dc=springframework,dc=org
+objectclass: inetOrgPerson
+objectclass: organizationalPerson
+objectclass: person
+objectclass: top
+cn: Bob Hamilton
+sn: Hamilton
+uid: bob
+userpassword: bobspassword
+
+dn: uid=joe,ou=otherpeople,dc=springframework,dc=org
+objectclass: inetOrgPerson
+objectclass: organizationalPerson
+objectclass: person
+objectclass: top
+cn: Joe Smeth
+sn: Smeth
+uid: joe
+userpassword: am9lc3Bhc3N3b3Jk
+
+dn: cn=mouse\, jerry,ou=people,dc=springframework,dc=org
+objectclass: inetOrgPerson
+objectclass: organizationalPerson
+objectclass: person
+objectclass: top
+cn: Mouse, Jerry
+sn: Mouse
+uid: jerry
+userpassword: amVycnlzcGFzc3dvcmQ=
+
+dn: cn=slash/guy,ou=people,dc=springframework,dc=org
+objectclass: inetOrgPerson
+objectclass: organizationalPerson
+objectclass: person
+objectclass: top
+cn: slash/guy
+sn: Slash
+uid: slashguy
+userpassword: c2xhc2hndXlzcGFzc3dvcmQ=
+
+dn: cn=quote\"guy,ou=\"quoted people\",dc=springframework,dc=org
+objectclass: inetOrgPerson
+objectclass: organizationalPerson
+objectclass: person
+objectclass: top
+cn: quote\"guy
+cn: quote"guy
+sn: Quote
+uid: quoteguy
+userpassword: cXVvdGVndXlzcGFzc3dvcmQ=
+
+dn: uid=space cadet,ou=space cadets,dc=springframework,dc=org
+objectclass: inetOrgPerson
+objectclass: organizationalPerson
+objectclass: person
+objectclass: top
+cn: Space Cadet
+sn: Cadet
+uid: space cadet
+userpassword: c3BhY2VjYWRldHNwYXNzd29yZA==
+
+dn: cn=user,ou=groups,dc=springframework,dc=org
+objectclass: groupOfNames
+objectclass: top
+cn: user
+ou: developer
+uniquemember: uid=ben,ou=people,dc=springframework,dc=org
+uniquemember: uid=bob,ou=people,dc=springframework,dc=org
+
+dn: cn=administrator,ou=groups,dc=springframework,dc=org
+objectclass: groupOfNames
+objectclass: top
+cn: administrator
+ou: manager
+uniquemember: uid=ben,ou=people,dc=springframework,dc=org
+uniquemember: cn=mouse\, jerry,ou=people,dc=springframework,dc=org
+
+dn: cn=submanagers,ou=subgroups,ou=groups,dc=springframework,dc=org
+objectclass: groupOfNames
+objectclass: top
+cn: submanagers
+ou: submanager
+uniquemember: uid=ben,ou=people,dc=springframework,dc=org
+
