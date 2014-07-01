@@ -20,9 +20,10 @@ public class MultiUserDetailsService implements UserDetailsService {
 	public UserDetails loadUserByUsername(String username)
 			throws UsernameNotFoundException {
 		for (UserDetailsService usd : this.userDetailsServiceList) {
-			UserDetails user = usd.loadUserByUsername(username);
-			if (user != null) {
-				return user;
+			try {
+				return usd.loadUserByUsername(username);
+			} catch (UsernameNotFoundException e) {
+				// user not found in the current userDetailService
 			}
 		}
 		throw new UsernameNotFoundException(String.format(
