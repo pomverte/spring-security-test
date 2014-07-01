@@ -30,13 +30,4 @@ public class MultiUserDetailsService implements UserDetailsService {
 				"username [%s] not found", username));
 	}
 
-	public List<UserDetailsService> getUserDetailsServiceList() {
-		return userDetailsServiceList;
-	}
-
-	public void setUserDetailsServiceList(
-			List<UserDetailsService> userDetailsServiceList) {
-		this.userDetailsServiceList = userDetailsServiceList;
-	}
-
 }
